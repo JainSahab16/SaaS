@@ -25,7 +25,15 @@ SECRET_KEY = 'django-insecure-@@yt)i8$k6zo4_#5%a36bdsksijviy#*t_--a%w=zo*^y)jfjs
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [ 
+    ".railway.app" # https://saas.prod.railway.app
+]
+
+if DEBUG:
+   ALLOWED_HOSTS+= [
+      "127.0.0.1",
+      "localhost"
+   ]
 
 
 # Application definition
@@ -57,7 +65,7 @@ ROOT_URLCONF = 'cfehome.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / "templates",BASE_DIR / "cfehome "],
+        'DIRS': [BASE_DIR / "templates",BASE_DIR / "cfehome"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
