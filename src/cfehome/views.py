@@ -15,8 +15,8 @@ def home_page_view(request,*args,**kwargs):
       "queryset":page_qs.count(),
       "total_visit_count":qs.count(),
    }
-   html_template="home.html"
    path=request.path
+   html_template="home.html"
    print(path)
    PageVisit.objects.create(path=request.path)
    return render(request,html_template,my_context)
