@@ -36,8 +36,8 @@ ARG DJANGO_DEBUG=0
 ENV DJANGO_DEBUG=${DJANGO_DEBUG}
 
 # Static build steps
-COPY ./rav.yaml /tmp/rav.yaml
-RUN rav download staticfiles_prod -f /tmp/rav.yaml
+# COPY ./rav.yaml /tmp/rav.yaml
+# RUN rav download staticfiles_prod -f /tmp/rav.yaml
 
 RUN python manage.py collectstatic --noinput
 
